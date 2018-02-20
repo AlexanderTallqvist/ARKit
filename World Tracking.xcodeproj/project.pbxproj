@@ -14,6 +14,14 @@
 		115720F82020927B008D2B8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115720F62020927B008D2B8E /* LaunchScreen.storyboard */; };
 		115721032020927B008D2B8E /* World_TrackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115721022020927B008D2B8E /* World_TrackingTests.swift */; };
 		1157210E2020927B008D2B8E /* World_TrackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1157210D2020927B008D2B8E /* World_TrackingUITests.swift */; };
+		1157211D2020AD11008D2B8E /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1157211B2020AD0B008D2B8E /* InitialViewController.swift */; };
+		11FDC48F202F49370057EA65 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FDC48E202F49370057EA65 /* DrawingViewController.swift */; };
+		11FDC491202F66E00057EA65 /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FDC490202F66E00057EA65 /* PlanetViewController.swift */; };
+		11FDC493203B56580057EA65 /* IkeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FDC492203B56580057EA65 /* IkeaViewController.swift */; };
+		11FDC495203B5F7F0057EA65 /* ikeaItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FDC494203B5F7F0057EA65 /* ikeaItemCell.swift */; };
+		11FDC49E203B668D0057EA65 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 11FDC49D203B668D0057EA65 /* Models.scnassets */; };
+		11FDC4A1203B67C80057EA65 /* RetroRoomDivider_Diffuce.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11FDC49F203B67C80057EA65 /* RetroRoomDivider_Diffuce.jpg */; };
+		11FDC4A2203B67C80057EA65 /* RetroRoomDivider_Normal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11FDC4A0203B67C80057EA65 /* RetroRoomDivider_Normal.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		115721092020927B008D2B8E /* World TrackingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "World TrackingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1157210D2020927B008D2B8E /* World_TrackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World_TrackingUITests.swift; sourceTree = "<group>"; };
 		1157210F2020927B008D2B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1157211B2020AD0B008D2B8E /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		11FDC48E202F49370057EA65 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		11FDC490202F66E00057EA65 /* PlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewController.swift; sourceTree = "<group>"; };
+		11FDC492203B56580057EA65 /* IkeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkeaViewController.swift; sourceTree = "<group>"; };
+		11FDC494203B5F7F0057EA65 /* ikeaItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ikeaItemCell.swift; sourceTree = "<group>"; };
+		11FDC49D203B668D0057EA65 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		11FDC49F203B67C80057EA65 /* RetroRoomDivider_Diffuce.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = RetroRoomDivider_Diffuce.jpg; path = "../../../Downloads/Retro Room Divider Game-Ready/RetroRoomDividerCollada/RetroRoomDivider_Diffuce.jpg"; sourceTree = "<group>"; };
+		11FDC4A0203B67C80057EA65 /* RetroRoomDivider_Normal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = RetroRoomDivider_Normal.jpg; path = "../../../Downloads/Retro Room Divider Game-Ready/RetroRoomDividerCollada/RetroRoomDivider_Normal.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +114,19 @@
 			isa = PBXGroup;
 			children = (
 				115720ED2020927B008D2B8E /* AppDelegate.swift */,
+				1157211B2020AD0B008D2B8E /* InitialViewController.swift */,
 				115720EF2020927B008D2B8E /* ViewController.swift */,
+				11FDC48E202F49370057EA65 /* DrawingViewController.swift */,
+				11FDC490202F66E00057EA65 /* PlanetViewController.swift */,
+				11FDC492203B56580057EA65 /* IkeaViewController.swift */,
+				11FDC49F203B67C80057EA65 /* RetroRoomDivider_Diffuce.jpg */,
+				11FDC4A0203B67C80057EA65 /* RetroRoomDivider_Normal.jpg */,
+				11FDC494203B5F7F0057EA65 /* ikeaItemCell.swift */,
 				115720F12020927B008D2B8E /* Main.storyboard */,
 				115720F42020927B008D2B8E /* Assets.xcassets */,
 				115720F62020927B008D2B8E /* LaunchScreen.storyboard */,
 				115720F92020927B008D2B8E /* Info.plist */,
+				11FDC49D203B668D0057EA65 /* Models.scnassets */,
 			);
 			path = "World Tracking";
 			sourceTree = "<group>";
@@ -235,6 +259,9 @@
 				115720F82020927B008D2B8E /* LaunchScreen.storyboard in Resources */,
 				115720F52020927B008D2B8E /* Assets.xcassets in Resources */,
 				115720F32020927B008D2B8E /* Main.storyboard in Resources */,
+				11FDC49E203B668D0057EA65 /* Models.scnassets in Resources */,
+				11FDC4A2203B67C80057EA65 /* RetroRoomDivider_Normal.jpg in Resources */,
+				11FDC4A1203B67C80057EA65 /* RetroRoomDivider_Diffuce.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11FDC493203B56580057EA65 /* IkeaViewController.swift in Sources */,
+				11FDC491202F66E00057EA65 /* PlanetViewController.swift in Sources */,
+				1157211D2020AD11008D2B8E /* InitialViewController.swift in Sources */,
+				11FDC48F202F49370057EA65 /* DrawingViewController.swift in Sources */,
+				11FDC495203B5F7F0057EA65 /* ikeaItemCell.swift in Sources */,
 				115720F02020927B008D2B8E /* ViewController.swift in Sources */,
 				115720EE2020927B008D2B8E /* AppDelegate.swift in Sources */,
 			);
