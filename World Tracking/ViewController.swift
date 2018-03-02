@@ -9,10 +9,18 @@
 import UIKit
 import ARKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ARSCNViewDelegate {
     
     // Our sceneView
     @IBOutlet weak var sceneView: ARSCNView!
+    
+    // Our labels
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var xLabel: UILabel!
+    @IBOutlet weak var yLabel: UILabel!
+    @IBOutlet weak var zLabel: UILabel!
+    // Our staring position
+    var startingPosition: SCNNode?
     
     // This is going to track the phones position and orientation
     let configuration = ARWorldTrackingConfiguration()
@@ -24,82 +32,86 @@ class ViewController: UIViewController {
         self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints,
             ARSCNDebugOptions.showWorldOrigin]
         
-        
         // Pass the tracking configurations to our sceneView
         self.sceneView.session.run(configuration)
-        // Add a light srouce
-        self.sceneView.autoenablesDefaultLighting = true
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Add a tap geasture recognizer
+        let tapGeastureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.sceneView.addGestureRecognizer(tapGeastureRecognizer)
+        
+        // Enables us to trigger our own delegate function
+        self.sceneView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func add(_ sender: Any) {
-//        let node = SCNNode()
-//        // Create a "Box", and set its width, height, length and border-radius
-//        node.geometry = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.33)
-//        // Reflect light of the surface
-//        node.geometry?.firstMaterial?.specular.contents = UIColor.white
-//        // Fill the box with the color blue
-//        node.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
-//        // Set the position of the node (X,Y,Z)
-//        let x = self.randomNumbers(firstNum: 0.3, secondNum: -0.3)
-//        let y = self.randomNumbers(firstNum: 0.3, secondNum: -0.3)
-//        let z = self.randomNumbers(firstNum: 0.3, secondNum: -0.3)
-//        node.position = SCNVector3(x, y, z)
-//        // Add our node to the root node
-//        self.sceneView.scene.rootNode.addChildNode(node)
-        self.createHouse()
-    }
     
-    @IBAction func reset(_ sender: Any) {
-        self.restartSession()
-    }
-    
-    func createHouse() {
-        // Create a door node
-        let doorNode = SCNNode(geometry: SCNPlane(width: 0.03, height: 0.06))
-        doorNode.geometry?.firstMaterial?.diffuse.contents = UIColor.brown
-        
-        // Create a box node
-        let boxNode = SCNNode(geometry: SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0))
-        boxNode.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
-        
-        // Create our child node, and make it a pyramid
-        let node = SCNNode()
-        node.geometry = SCNPyramid(width: 0.1, height: 0.1, length: 0.1)
-        node.geometry?.firstMaterial?.specular.contents = UIColor.orange
-        node.geometry?.firstMaterial?.diffuse.contents = UIColor.red
-        
-        // Position all of our 3 nodes
-        node.position = SCNVector3(0.2,0.3,-0.2)
-        boxNode.position = SCNVector3(0, -0.05, 0)
-        doorNode.position = SCNVector3(0,-0.02,0.053)
-        
-        // Add our nodes (a house) to our root node
-        self.sceneView.scene.rootNode.addChildNode(node)
-        node.addChildNode(boxNode)
-        boxNode.addChildNode(doorNode)
-    }
-    
-    func restartSession() {
-        self.sceneView.session.pause()
-        
-        // Loop through the rootNodes childnodes, and remove our node
-        self.sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
-            node.removeFromParentNode()
+    // Our function to handle the tap event
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        guard let sceneView = sender.view as? ARSCNView else {return}
+        // Get the current frame
+        guard let currentFrame = sceneView.session.currentFrame else {return}
+        // Stop measuring the distance when we tap the screen again
+        if self.startingPosition != nil {
+            self.startingPosition?.removeFromParentNode()
+            self.startingPosition = nil
+            return
         }
-        
-        // Reset the sessions tracking and anchors
-        self.sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-        
+        // Access the cameras location
+        let camera = currentFrame.camera
+        // Access the position of the cameras transform matrix
+        let transform = camera.transform
+        // Create another matrix in order to place the spehere infront of the camera
+        var translationMatrix = matrix_identity_float4x4
+        // We want to set the "dot" 10cm away from the camera
+        translationMatrix.columns.3.z = -0.1
+        // Multiply our two matrixes aka change our z value in the cameras own matrix
+        let modifiedMatrix = simd_mul(transform, translationMatrix)
+        // Create our sphere
+        let sphere = SCNNode(geometry: SCNSphere(radius: 0.004))
+        sphere.geometry?.firstMaterial?.diffuse.contents = UIColor.green
+        // Position our spehere infront of the camera
+        sphere.simdTransform = modifiedMatrix
+        // Add the node to the sceneview
+        self.sceneView.scene.rootNode.addChildNode(sphere)
+        // Set the starting positon
+        self.startingPosition = sphere
     }
-    // Helper function that generates random values for us
-    func randomNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat {
-        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
+    
+    // This gets called 60x/second
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        // Only continue if the user has provided us with a starting position
+        guard let startingPosition = self.startingPosition else {return}
+        // Cameras point of view
+        guard let pointOfView = self.sceneView.pointOfView else {return}
+        // Extract the needed matrix values
+        let transform = pointOfView.transform
+        let location = SCNVector3(transform.m41, transform.m42, transform.m43)
+        // Calculate the distance traveled
+        let xDistance = location.x - startingPosition.position.x
+        let yDistance = location.y - startingPosition.position.y
+        let zDistance = location.z - startingPosition.position.z
+        
+        // Set the values of our labels
+        DispatchQueue.main.async {
+            self.xLabel.text = "X: " + String(format: "%.2f", xDistance) + " m"
+            self.yLabel.text = "Y: " + String(format: "%.2f", yDistance) + " m"
+            self.zLabel.text = "Z: " + String(format: "%.2f", zDistance) + " m"
+            self.distance.text = "Distance: " + String(format: "%.2f", self.distanceTravelled(x: xDistance, y: yDistance, z: zDistance)) + " m"
+        }
     }
+    
+    // Calculate the diagonal distance
+    func distanceTravelled(x: Float, y: Float, z: Float) -> Float {
+        // Pythagoras sats
+        return (sqrt(x*x + y*y + z*z))
+    }
+    
+    
+//    Old buttons
+//    @IBAction func add(_ sender: Any) {}
+//    @IBAction func reset(_ sender: Any) {}
 }
 
