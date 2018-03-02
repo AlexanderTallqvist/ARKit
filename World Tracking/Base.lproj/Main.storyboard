@@ -360,9 +360,16 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plane Detected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmk-Ej-Z5x">
+                                <rect key="frame" x="116" y="20" width="144" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wmk-Ej-Z5x" firstAttribute="top" secondItem="T7f-R1-4mt" secondAttribute="top" id="GMl-Qa-rK2"/>
                             <constraint firstItem="aMP-SA-tUf" firstAttribute="top" secondItem="9JH-i3-Tuo" secondAttribute="top" id="Gpj-aM-y2l"/>
                             <constraint firstItem="Dvb-5x-bAY" firstAttribute="top" secondItem="T7f-R1-4mt" secondAttribute="top" constant="5" id="IRB-Tt-5hc"/>
                             <constraint firstItem="Dvb-5x-bAY" firstAttribute="top" secondItem="T7f-R1-4mt" secondAttribute="top" constant="5" id="TDv-CD-SLZ"/>
@@ -375,6 +382,7 @@
                             <constraint firstItem="LJ4-28-3bm" firstAttribute="trailing" secondItem="T7f-R1-4mt" secondAttribute="trailing" id="om8-5H-85o"/>
                             <constraint firstItem="aMP-SA-tUf" firstAttribute="trailing" secondItem="T7f-R1-4mt" secondAttribute="trailing" id="vCc-Af-0Fb"/>
                             <constraint firstItem="LJ4-28-3bm" firstAttribute="leading" secondItem="T7f-R1-4mt" secondAttribute="leading" id="vxx-s5-Oxw"/>
+                            <constraint firstItem="wmk-Ej-Z5x" firstAttribute="centerX" secondItem="9JH-i3-Tuo" secondAttribute="centerX" id="whN-6P-uAD"/>
                             <constraint firstItem="T7f-R1-4mt" firstAttribute="trailing" secondItem="Dvb-5x-bAY" secondAttribute="trailing" constant="15" id="xDX-ls-h06"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T7f-R1-4mt"/>
@@ -382,6 +390,7 @@
                     <connections>
                         <outlet property="ikeaSceneView" destination="aMP-SA-tUf" id="Kiz-be-bi9"/>
                         <outlet property="itemsCollectionView" destination="LJ4-28-3bm" id="khU-ez-Bdi"/>
+                        <outlet property="planeDetected" destination="wmk-Ej-Z5x" id="0Um-AV-yAV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feH-HL-M9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
