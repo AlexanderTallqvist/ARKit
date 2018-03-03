@@ -15,6 +15,27 @@ class DrawingViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var drawingSceneView: ARSCNView!
     @IBOutlet weak var draw: UIButton!
     
+    var currentColor = UIColor.blue
+    
+    // Our color changers
+    @IBAction func purpleColor(_ sender: Any) {
+        self.currentColor = UIColor.purple
+    }
+    @IBAction func yellowColor(_ sender: Any) {
+        self.currentColor = UIColor.yellow
+    }
+    @IBAction func brownColor(_ sender: Any) {
+        self.currentColor = UIColor.brown
+    }
+    @IBAction func greenColor(_ sender: Any) {
+        self.currentColor = UIColor.green
+    }
+    @IBAction func blueColor(_ sender: Any) {
+        self.currentColor = UIColor.blue
+    }
+    @IBAction func redColor(_ sender: Any) {
+        self.currentColor = UIColor.red
+    }
     // This is going to track the phones position and orientation
     let configuration = ARWorldTrackingConfiguration()
     
@@ -73,7 +94,7 @@ class DrawingViewController: UIViewController, ARSCNViewDelegate {
                 self.drawingSceneView.scene.rootNode.addChildNode(sphereNode)
                 
                 // Give the spehere a color
-                sphereNode.geometry?.firstMaterial?.diffuse.contents = UIColor.blue;
+                sphereNode.geometry?.firstMaterial?.diffuse.contents = self.currentColor
             } else {
                 // Give the user a "pointer", to indicate for the user where they will be drawing
                 let pointer = SCNNode(geometry: SCNSphere(radius: 0.01))
@@ -87,7 +108,7 @@ class DrawingViewController: UIViewController, ARSCNViewDelegate {
                     }
                 })
                 self.drawingSceneView.scene.rootNode.addChildNode(pointer)
-                pointer.geometry?.firstMaterial?.diffuse.contents = UIColor.blue;
+                pointer.geometry?.firstMaterial?.diffuse.contents = self.currentColor
             }
             
             // Orientation debugging

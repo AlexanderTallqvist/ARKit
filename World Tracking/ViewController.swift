@@ -15,12 +15,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var sceneView: ARSCNView!
     
     // Our labels
+    @IBOutlet weak var allDistances: UILabel!
     @IBOutlet weak var distance: UILabel!
     @IBOutlet weak var xLabel: UILabel!
     @IBOutlet weak var yLabel: UILabel!
     @IBOutlet weak var zLabel: UILabel!
     // Our staring position
     var startingPosition: SCNNode?
+    
+    // Store location values
+    var xDistance = ""
+    var yDistance = ""
+    var zDistance = ""
+    var totDistance = ""
+    
+    // Used to reset our screen
+    var counter = 0
     
     // This is going to track the phones position and orientation
     let configuration = ARWorldTrackingConfiguration()
@@ -57,6 +67,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         if self.startingPosition != nil {
             self.startingPosition?.removeFromParentNode()
             self.startingPosition = nil
+            
+            // Store the old values
+            var textString = ""
+            textString =  self.xDistance  + "\n"
+            textString +=  self.yDistance  + "\n"
+            textString +=  self.zDistance  + "\n"
+            textString +=  self.totDistance  + "\n"
+            
+            // Reset our big textfield
+            self.counter += 1
+            if (self.counter > 4) {
+                self.allDistances.text = ""
+                self.counter = 0
+            }
+            
+            if (self.allDistances.text == "" || self.allDistances.text == nil) {
+                self.allDistances.text = textString
+            } else {
+                self.allDistances.text = self.allDistances.text! + "\n" + textString
+            }
             return
         }
         // Access the cameras location
@@ -97,9 +127,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the values of our labels
         DispatchQueue.main.async {
             self.xLabel.text = "X: " + String(format: "%.2f", xDistance) + " m"
+            self.xDistance = "X: " + String(format: "%.2f", xDistance) + " m"
             self.yLabel.text = "Y: " + String(format: "%.2f", yDistance) + " m"
+            self.yDistance = "Y: " + String(format: "%.2f", yDistance) + " m"
             self.zLabel.text = "Z: " + String(format: "%.2f", zDistance) + " m"
+            self.zDistance = "Z: " + String(format: "%.2f", zDistance) + " m"
             self.distance.text = "Distance: " + String(format: "%.2f", self.distanceTravelled(x: xDistance, y: yDistance, z: zDistance)) + " m"
+            self.totDistance = "Distance: " + String(format: "%.2f", self.distanceTravelled(x: xDistance, y: yDistance, z: zDistance)) + " m"
         }
     }
     

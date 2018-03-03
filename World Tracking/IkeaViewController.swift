@@ -112,7 +112,7 @@ class IkeaViewController: UIViewController, UICollectionViewDataSource, UICollec
             // We are currently "pressing" an object
             if sender.state == .began {
                 // Apply the a rotation to the selected node
-                let rotation = SCNAction.rotateBy(x: 0, y: CGFloat(360.degreesToRadians), z: 0, duration: 1)
+                let rotation = SCNAction.rotateBy(x: 0, y: CGFloat(360.degreesToRadians), z: 0, duration: 2)
                 let forever = SCNAction.repeatForever(rotation)
                 result.node.runAction(forever)
                 // We "let go"
@@ -171,13 +171,13 @@ class IkeaViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         self.selectedItem = itemsArray[indexPath.row]
-        cell?.backgroundColor = UIColor.blue
+        cell?.backgroundColor = UIColor.yellow
     }
     
     // Remove deselected color
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
-        cell?.backgroundColor = UIColor.orange
+        cell?.backgroundColor = UIColor.green
     }
     
     // Display our "plane detected" label
