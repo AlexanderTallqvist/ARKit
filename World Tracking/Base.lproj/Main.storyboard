@@ -619,18 +619,40 @@
                                     <segue destination="3cs-F9-m8O" kind="presentation" modalTransitionStyle="crossDissolve" id="TO9-fC-xnS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjx-Zt-pPc">
+                                <rect key="frame" x="20" y="40" width="82.5" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="FFX-rr-A7p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.99332756730000005" green="1" blue="0.99765489760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxs-hy-ltN">
+                                <rect key="frame" x="20" y="105" width="79" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Wlx-e3-PeU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.99332756730000005" green="1" blue="0.99765489760000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7Th-Lf-TlZ" firstAttribute="top" secondItem="fTz-lH-xWc" secondAttribute="top" constant="5" id="4q6-uC-GMJ"/>
+                            <constraint firstItem="jjx-Zt-pPc" firstAttribute="top" secondItem="fTz-lH-xWc" secondAttribute="top" constant="20" id="8Qx-9V-nqz"/>
                             <constraint firstItem="kp1-IF-NU6" firstAttribute="leading" secondItem="fTz-lH-xWc" secondAttribute="leading" id="Ax4-Zw-B8j"/>
                             <constraint firstItem="Gwo-2S-l4S" firstAttribute="leading" secondItem="fTz-lH-xWc" secondAttribute="leading" constant="20" id="DUK-D4-U6S"/>
                             <constraint firstItem="fTz-lH-xWc" firstAttribute="bottom" secondItem="G5t-kC-T6z" secondAttribute="bottom" constant="20" id="Lcj-rL-zcF"/>
                             <constraint firstItem="kp1-IF-NU6" firstAttribute="trailing" secondItem="fTz-lH-xWc" secondAttribute="trailing" id="Mp2-8D-Kdj"/>
+                            <constraint firstItem="jjx-Zt-pPc" firstAttribute="leading" secondItem="fTz-lH-xWc" secondAttribute="leading" constant="20" id="Tae-xs-UN2"/>
                             <constraint firstItem="kp1-IF-NU6" firstAttribute="top" secondItem="dov-gu-46P" secondAttribute="top" id="Ueg-az-Dqv"/>
                             <constraint firstItem="fTz-lH-xWc" firstAttribute="trailing" secondItem="G5t-kC-T6z" secondAttribute="trailing" constant="20" id="VNc-cy-4VR"/>
                             <constraint firstItem="kp1-IF-NU6" firstAttribute="bottom" secondItem="fTz-lH-xWc" secondAttribute="bottom" id="XTf-pQ-JnF"/>
                             <constraint firstItem="fTz-lH-xWc" firstAttribute="trailing" secondItem="7Th-Lf-TlZ" secondAttribute="trailing" constant="15" id="amU-4h-CE7"/>
+                            <constraint firstItem="Oxs-hy-ltN" firstAttribute="leading" secondItem="fTz-lH-xWc" secondAttribute="leading" constant="20" id="o7j-aj-8ve"/>
+                            <constraint firstItem="Oxs-hy-ltN" firstAttribute="top" secondItem="jjx-Zt-pPc" secondAttribute="bottom" constant="20" id="tFf-d2-Bhk"/>
                             <constraint firstItem="fTz-lH-xWc" firstAttribute="bottom" secondItem="Gwo-2S-l4S" secondAttribute="bottom" constant="20" id="tXI-Ud-CnL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fTz-lH-xWc"/>
@@ -638,6 +660,8 @@
                     <connections>
                         <outlet property="GameSceneView" destination="kp1-IF-NU6" id="MrO-Ef-fBd"/>
                         <outlet property="Play" destination="Gwo-2S-l4S" id="y5h-QX-Wmf"/>
+                        <outlet property="scoreLabel" destination="Oxs-hy-ltN" id="V42-Yk-6ix"/>
+                        <outlet property="timeLabel" destination="jjx-Zt-pPc" id="jp1-ZK-Z5W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOw-Hu-j6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
