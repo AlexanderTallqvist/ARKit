@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1119DCAA204C3C110053F206 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1119DCA9204C3C110053F206 /* GameViewController.swift */; };
+		1119DCAE204C44E20053F206 /* Textures in Resources */ = {isa = PBXBuildFile; fileRef = 1119DCAD204C44E20053F206 /* Textures */; };
 		115720EE2020927B008D2B8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115720ED2020927B008D2B8E /* AppDelegate.swift */; };
 		115720F02020927B008D2B8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115720EF2020927B008D2B8E /* ViewController.swift */; };
 		115720F32020927B008D2B8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115720F12020927B008D2B8E /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1119DCA9204C3C110053F206 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		1119DCAD204C44E20053F206 /* Textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Textures; sourceTree = "<group>"; };
 		115720EA2020927B008D2B8E /* World Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		115720ED2020927B008D2B8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		115720EF2020927B008D2B8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,10 +123,12 @@
 				11FDC48E202F49370057EA65 /* DrawingViewController.swift */,
 				11FDC490202F66E00057EA65 /* PlanetViewController.swift */,
 				11FDC492203B56580057EA65 /* IkeaViewController.swift */,
-				11FDC49F203B67C80057EA65 /* RetroRoomDivider_Diffuce.jpg */,
-				11FDC4A0203B67C80057EA65 /* RetroRoomDivider_Normal.jpg */,
 				11FDC494203B5F7F0057EA65 /* ikeaItemCell.swift */,
+				1119DCA9204C3C110053F206 /* GameViewController.swift */,
 				115720F12020927B008D2B8E /* Main.storyboard */,
+				11FDC4A0203B67C80057EA65 /* RetroRoomDivider_Normal.jpg */,
+				11FDC49F203B67C80057EA65 /* RetroRoomDivider_Diffuce.jpg */,
+				1119DCAD204C44E20053F206 /* Textures */,
 				115720F42020927B008D2B8E /* Assets.xcassets */,
 				115720F62020927B008D2B8E /* LaunchScreen.storyboard */,
 				115720F92020927B008D2B8E /* Info.plist */,
@@ -259,6 +265,7 @@
 				115720F82020927B008D2B8E /* LaunchScreen.storyboard in Resources */,
 				115720F52020927B008D2B8E /* Assets.xcassets in Resources */,
 				115720F32020927B008D2B8E /* Main.storyboard in Resources */,
+				1119DCAE204C44E20053F206 /* Textures in Resources */,
 				11FDC49E203B668D0057EA65 /* Models.scnassets in Resources */,
 				11FDC4A2203B67C80057EA65 /* RetroRoomDivider_Normal.jpg in Resources */,
 				11FDC4A1203B67C80057EA65 /* RetroRoomDivider_Diffuce.jpg in Resources */,
@@ -290,6 +297,7 @@
 				11FDC491202F66E00057EA65 /* PlanetViewController.swift in Sources */,
 				1157211D2020AD11008D2B8E /* InitialViewController.swift in Sources */,
 				11FDC48F202F49370057EA65 /* DrawingViewController.swift in Sources */,
+				1119DCAA204C3C110053F206 /* GameViewController.swift in Sources */,
 				11FDC495203B5F7F0057EA65 /* ikeaItemCell.swift in Sources */,
 				115720F02020927B008D2B8E /* ViewController.swift in Sources */,
 				115720EE2020927B008D2B8E /* AppDelegate.swift in Sources */,
