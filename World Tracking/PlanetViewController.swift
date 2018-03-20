@@ -11,7 +11,7 @@ import ARKit
 
 class PlanetViewController: UIViewController {
     
-    var earthFacts = "   EARTH" + "\n" +
+    var earthFacts = "    EARTH" + "\n" +
                      "    Equatorial Diameter: 12,756 km" + "\n" +
                      "    Polar Diameter: 12,714 km" + "\n" +
                      "    Mass: 5.97 x 10^24 kg" + "\n" +
