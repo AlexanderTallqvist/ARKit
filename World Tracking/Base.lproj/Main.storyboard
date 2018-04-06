@@ -106,7 +106,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Bottle"/>
                                 <connections>
-                                    <segue destination="CTs-5G-mwb" kind="presentation" modalTransitionStyle="coverVertical" id="3Wh-i4-7Sa"/>
+                                    <segue destination="rYK-nW-FK2" kind="presentation" modalTransitionStyle="coverVertical" id="8c7-J0-DlS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -665,47 +665,82 @@
             </objects>
             <point key="canvasLocation" x="3148" y="129.98500749625188"/>
         </scene>
-        <!--Location View Controller-->
+        <!--Location View Controller2-->
         <scene sceneID="jc4-f8-UVc">
             <objects>
-                <viewController id="CTs-5G-mwb" customClass="LocationViewController" customModule="World_Tracking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CTs-5G-mwb" customClass="LocationViewController2" customModule="World_Tracking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cf6-PH-FGT">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXv-jU-m6B">
-                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
-                            </arscnView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZyV-NA-sgC">
-                                <rect key="frame" x="744" y="35" width="75" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="BNU-gh-qAJ"/>
-                                    <constraint firstAttribute="height" constant="75" id="KKx-gd-eBd"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Back"/>
-                                <connections>
-                                    <segue destination="3cs-F9-m8O" kind="presentation" modalTransitionStyle="crossDissolve" id="8SK-9J-2Wr"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="NXv-jU-m6B" firstAttribute="bottom" secondItem="Llp-PB-xKu" secondAttribute="bottom" id="0CV-mx-a3I"/>
-                            <constraint firstItem="NXv-jU-m6B" firstAttribute="trailing" secondItem="Llp-PB-xKu" secondAttribute="trailing" id="5qj-9y-pYV"/>
-                            <constraint firstItem="ZyV-NA-sgC" firstAttribute="top" secondItem="Llp-PB-xKu" secondAttribute="top" constant="15" id="8Qx-s6-GcC"/>
-                            <constraint firstItem="Llp-PB-xKu" firstAttribute="trailing" secondItem="ZyV-NA-sgC" secondAttribute="trailing" constant="15" id="NvV-Ok-t7u"/>
-                            <constraint firstItem="NXv-jU-m6B" firstAttribute="top" secondItem="cf6-PH-FGT" secondAttribute="top" id="jbI-vO-E8K"/>
-                            <constraint firstItem="NXv-jU-m6B" firstAttribute="leading" secondItem="Llp-PB-xKu" secondAttribute="leading" id="skq-TV-EtL"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Llp-PB-xKu"/>
                     </view>
-                    <connections>
-                        <outlet property="LocationSceneView" destination="NXv-jU-m6B" id="lb1-o9-jNP"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzC-Dg-cK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3858.9928057553961" y="128.9568345323741"/>
+        </scene>
+        <!--CoreLocation AR-->
+        <scene sceneID="M3e-qs-SOo">
+            <objects>
+                <tableViewController id="Fix-Sl-65y" customClass="LocationTableViewController" customModule="World_Tracking" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zsi-6t-wJC">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="Q0O-sX-2cT">
+                                <rect key="frame" x="0.0" y="28" width="834" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q0O-sX-2cT" id="sCX-zb-6Ig">
+                                    <rect key="frame" x="0.0" y="0.0" width="796" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="CTs-5G-mwb" kind="show" id="mZt-OW-Bau"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Fix-Sl-65y" id="xkX-7b-J4N"/>
+                            <outlet property="delegate" destination="Fix-Sl-65y" id="OD4-fJ-o6u"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="CoreLocation AR" id="Tej-10-kW8">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="zJg-So-YDl">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vQv-pG-d7q">
+                                <rect key="frame" x="629" y="4" width="185" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Go Back"/>
+                                <connections>
+                                    <segue destination="3cs-F9-m8O" kind="presentation" modalTransitionStyle="crossDissolve" id="YlF-ip-ODf"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2s-Ro-qSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4678.4172661870507" y="129.49640287769785"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="j8m-vF-vPO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rYK-nW-FK2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rgo-JM-Nqw">
+                        <rect key="frame" x="0.0" y="20" width="834" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fix-Sl-65y" kind="relationship" relationship="rootViewController" id="YRJ-q2-58u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4j-s5-Iig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5340" y="129"/>
         </scene>
     </scenes>
     <resources>
@@ -721,6 +756,6 @@
         <image name="Ruler" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8SK-9J-2Wr"/>
+        <segue reference="YlF-ip-ODf"/>
     </inferredMetricsTieBreakers>
 </document>

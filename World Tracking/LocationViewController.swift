@@ -72,6 +72,20 @@ class LocationViewController: UIViewController, ARSCNViewDelegate {
 
 }
 
+//typealias StreetNameHandler = (String?) -> Void
+//
+//extension CLLocation {
+//
+//    func streetNameWithCompletionBlock(completionBlock: @escaping StreetNameHandler) {
+//
+//        CLGeocoder().reverseGeocodeLocation(self) { placemarks, error in
+//
+//            if let addressDictionary = placemarks?.first?.addressDictionary, let street = addressDictionary["Street"] as? String {
+//                completionBlock(street)
+//            }
+//        }
+//    }
+//}
 
 extension CLPlacemark {
     

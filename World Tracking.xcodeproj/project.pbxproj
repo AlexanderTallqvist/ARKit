@@ -11,6 +11,9 @@
 		1118BE292072745100EE6070 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1118BE282072745100EE6070 /* LocationViewController.swift */; };
 		1119DCAA204C3C110053F206 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1119DCA9204C3C110053F206 /* GameViewController.swift */; };
 		1119DCAE204C44E20053F206 /* Textures in Resources */ = {isa = PBXBuildFile; fileRef = 1119DCAD204C44E20053F206 /* Textures */; };
+		114FAB9C2077C4FB008BD0CC /* LocationViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FAB9B2077C4FB008BD0CC /* LocationViewController2.swift */; };
+		114FAB9E2077C71F008BD0CC /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FAB9D2077C71F008BD0CC /* LocationTableViewController.swift */; };
+		114FABA02077D5C1008BD0CC /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FAB9F2077D5C1008BD0CC /* LocationAnnotation.swift */; };
 		115720EE2020927B008D2B8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115720ED2020927B008D2B8E /* AppDelegate.swift */; };
 		115720F02020927B008D2B8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115720EF2020927B008D2B8E /* ViewController.swift */; };
 		115720F32020927B008D2B8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115720F12020927B008D2B8E /* Main.storyboard */; };
@@ -52,6 +55,9 @@
 		1118BE282072745100EE6070 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		1119DCA9204C3C110053F206 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		1119DCAD204C44E20053F206 /* Textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Textures; sourceTree = "<group>"; };
+		114FAB9B2077C4FB008BD0CC /* LocationViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController2.swift; sourceTree = "<group>"; };
+		114FAB9D2077C71F008BD0CC /* LocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
+		114FAB9F2077D5C1008BD0CC /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		115720EA2020927B008D2B8E /* World Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		115720ED2020927B008D2B8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		115720EF2020927B008D2B8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +174,9 @@
 				11FDC494203B5F7F0057EA65 /* ikeaItemCell.swift */,
 				1119DCA9204C3C110053F206 /* GameViewController.swift */,
 				1118BE282072745100EE6070 /* LocationViewController.swift */,
+				114FAB9B2077C4FB008BD0CC /* LocationViewController2.swift */,
+				114FAB9D2077C71F008BD0CC /* LocationTableViewController.swift */,
+				114FAB9F2077D5C1008BD0CC /* LocationAnnotation.swift */,
 				115720F12020927B008D2B8E /* Main.storyboard */,
 				11FDC4A0203B67C80057EA65 /* RetroRoomDivider_Normal.jpg */,
 				11FDC49F203B67C80057EA65 /* RetroRoomDivider_Diffuce.jpg */,
@@ -498,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11FDC493203B56580057EA65 /* IkeaViewController.swift in Sources */,
+				114FAB9C2077C4FB008BD0CC /* LocationViewController2.swift in Sources */,
 				11FDC491202F66E00057EA65 /* PlanetViewController.swift in Sources */,
 				1157211D2020AD11008D2B8E /* InitialViewController.swift in Sources */,
 				11FDC48F202F49370057EA65 /* DrawingViewController.swift in Sources */,
@@ -505,7 +515,9 @@
 				11FDC495203B5F7F0057EA65 /* ikeaItemCell.swift in Sources */,
 				1118BE292072745100EE6070 /* LocationViewController.swift in Sources */,
 				115720F02020927B008D2B8E /* ViewController.swift in Sources */,
+				114FAB9E2077C71F008BD0CC /* LocationTableViewController.swift in Sources */,
 				115720EE2020927B008D2B8E /* AppDelegate.swift in Sources */,
+				114FABA02077D5C1008BD0CC /* LocationAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
