@@ -22,6 +22,8 @@
 		115721032020927B008D2B8E /* World_TrackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115721022020927B008D2B8E /* World_TrackingTests.swift */; };
 		1157210E2020927B008D2B8E /* World_TrackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1157210D2020927B008D2B8E /* World_TrackingUITests.swift */; };
 		1157211D2020AD11008D2B8E /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1157211B2020AD0B008D2B8E /* InitialViewController.swift */; };
+		119F4286208A39DE00D3E0B4 /* ImageDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F4285208A39DE00D3E0B4 /* ImageDetectionViewController.swift */; };
+		119F4288208A3D6900D3E0B4 /* ImageDetection in Resources */ = {isa = PBXBuildFile; fileRef = 119F4287208A3D6900D3E0B4 /* ImageDetection */; };
 		11FDC48F202F49370057EA65 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FDC48E202F49370057EA65 /* DrawingViewController.swift */; };
 		11FDC491202F66E00057EA65 /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FDC490202F66E00057EA65 /* PlanetViewController.swift */; };
 		11FDC493203B56580057EA65 /* IkeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FDC492203B56580057EA65 /* IkeaViewController.swift */; };
@@ -72,6 +74,8 @@
 		1157210D2020927B008D2B8E /* World_TrackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World_TrackingUITests.swift; sourceTree = "<group>"; };
 		1157210F2020927B008D2B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1157211B2020AD0B008D2B8E /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		119F4285208A39DE00D3E0B4 /* ImageDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetectionViewController.swift; sourceTree = "<group>"; };
+		119F4287208A3D6900D3E0B4 /* ImageDetection */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImageDetection; sourceTree = "<group>"; };
 		11FDC48E202F49370057EA65 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		11FDC490202F66E00057EA65 /* PlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewController.swift; sourceTree = "<group>"; };
 		11FDC492203B56580057EA65 /* IkeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkeaViewController.swift; sourceTree = "<group>"; };
@@ -177,9 +181,11 @@
 				114FAB9B2077C4FB008BD0CC /* LocationViewController2.swift */,
 				114FAB9D2077C71F008BD0CC /* LocationTableViewController.swift */,
 				114FAB9F2077D5C1008BD0CC /* LocationAnnotation.swift */,
+				119F4285208A39DE00D3E0B4 /* ImageDetectionViewController.swift */,
 				115720F12020927B008D2B8E /* Main.storyboard */,
 				11FDC4A0203B67C80057EA65 /* RetroRoomDivider_Normal.jpg */,
 				11FDC49F203B67C80057EA65 /* RetroRoomDivider_Diffuce.jpg */,
+				119F4287208A3D6900D3E0B4 /* ImageDetection */,
 				1119DCAD204C44E20053F206 /* Textures */,
 				115720F42020927B008D2B8E /* Assets.xcassets */,
 				115720F62020927B008D2B8E /* LaunchScreen.storyboard */,
@@ -323,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119F4288208A3D6900D3E0B4 /* ImageDetection in Resources */,
 				115720F82020927B008D2B8E /* LaunchScreen.storyboard in Resources */,
 				115720F52020927B008D2B8E /* Assets.xcassets in Resources */,
 				115720F32020927B008D2B8E /* Main.storyboard in Resources */,
@@ -509,6 +516,7 @@
 				11FDC493203B56580057EA65 /* IkeaViewController.swift in Sources */,
 				114FAB9C2077C4FB008BD0CC /* LocationViewController2.swift in Sources */,
 				11FDC491202F66E00057EA65 /* PlanetViewController.swift in Sources */,
+				119F4286208A39DE00D3E0B4 /* ImageDetectionViewController.swift in Sources */,
 				1157211D2020AD11008D2B8E /* InitialViewController.swift in Sources */,
 				11FDC48F202F49370057EA65 /* DrawingViewController.swift in Sources */,
 				1119DCAA204C3C110053F206 /* GameViewController.swift in Sources */,
@@ -620,7 +628,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -671,7 +679,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -690,6 +698,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Team-AR-BOIS.World-Tracking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -706,6 +715,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Team-AR-BOIS.World-Tracking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

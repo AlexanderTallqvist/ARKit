@@ -11,7 +11,7 @@ import UIKit
 
 class LocationTableViewController : UITableViewController {
     
-    private let locations = ["Coffee", "Bars", "Fast Food", "Banks", "Hospitals", "Gas Stations"]
+    private let locations = ["Coffee", "Bars", "Fast Food", "Banks", "Hospitals", "Gas Stations", "Grocery Store"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,9 @@ class LocationTableViewController : UITableViewController {
     
     // Allows us to move a table cell value to the next view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if self.tableView.indexPathForSelectedRow == nil {
+            return
+        }
         let indexPath = (self.tableView.indexPathForSelectedRow)!
         let location = self.locations[indexPath.row]
         let ViewController = segue.destination as! LocationViewController2
