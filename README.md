@@ -42,7 +42,7 @@
   <li><b>Code:</b> /World Tracking/LocationAnnotation.swift</li>
 </ul>
 
-<h3>AR Image Image Recognition</h3>
+<h3>AR Image Recognition</h3>
 <ul>
   <li>Allows users to detect images in AR, and get various information back.</li>
   <li><b>Code:</b> /World Tracking/ImageDetectionViewController.swift</li>
