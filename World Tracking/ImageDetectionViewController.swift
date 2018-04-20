@@ -38,7 +38,6 @@ class ImageDetectionViewController: UIViewController, ARSCNViewDelegate {
             let referenceImage = imageAnchor.referenceImage
             let imageName = referenceImage.name!
             
-            print(imageName)
             // Grab our 3d model
             let modelScene = SCNScene(named: "ImageDetection/\(imageName).scn")!
             

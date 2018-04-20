@@ -15,15 +15,16 @@ class LocationAnnotation : LocationNode {
     
     var title :String!
     var distance :String!
+    var url :String!
     var annotationNode :SCNNode
     
-    init(location: CLLocation?, title: String, distance: String) {
+    init(location: CLLocation?, title: String, distance: String, url: String) {
         self.annotationNode = SCNNode()
         self.title = title
         self.distance = distance
+        self.url = url
         super.init(location: location)
         self.createUI()
-        print(title)
     }
     
     // Required by LocationNode
@@ -37,20 +38,27 @@ class LocationAnnotation : LocationNode {
         plane.firstMaterial?.diffuse.contents = UIColor.blue
         
         // Text nodes
-        let text = SCNText(string: self.createTextString(), extrusionDepth: 0)
-        text.containerFrame = CGRect(x: 0, y: 0, width: 5, height: 3)
-        text.isWrapped = true
-        text.font = UIFont(name: "Futura", size: 0.35)
-        text.alignmentMode = kCAAlignmentCenter
-        text.truncationMode = kCATruncationMiddle
-        text.firstMaterial?.diffuse.contents = UIColor.white
+        let textName = createTextNode(message: self.title)
+        let textDistance = createTextNode(message: self.distance + " km")
+        let textUrl = createTextNode(message: self.url)
         
-        let textNode = SCNNode(geometry: text)
-        textNode.position = SCNVector3(0, 0, 0.2)
-        centerText(node: textNode)
+        let textNameNode = SCNNode(geometry: textName)
+        textNameNode.position = SCNVector3(0, 1, 0.2)
+        centerText(node: textNameNode)
+        
+        let textDistanceNode = SCNNode(geometry: textDistance)
+        textDistanceNode.position = SCNVector3(0, 0, 0.2)
+        centerText(node: textDistanceNode)
+        
+        let textUrlNode = SCNNode(geometry: textUrl)
+        textUrlNode.position = SCNVector3(0, -1, 0.2)
+        centerText(node: textUrlNode)
         
         let planeNode = SCNNode(geometry: plane)
-        planeNode.addChildNode(textNode)
+        planeNode.addChildNode(textNameNode)
+        planeNode.addChildNode(textDistanceNode)
+        planeNode.addChildNode(textUrlNode)
+
         
         self.annotationNode.scale = SCNVector3(3,3,3)
         self.annotationNode.addChildNode(planeNode)
@@ -72,8 +80,19 @@ class LocationAnnotation : LocationNode {
         node.pivot = SCNMatrix4MakeTranslation(dx, dy, dz)
     }
     
+    private func createTextNode(message: String) -> SCNText {
+        let text = SCNText(string: message, extrusionDepth: 0)
+        text.containerFrame = CGRect(x: 0, y: 0, width: 5, height: 3)
+        text.isWrapped = true
+        text.font = UIFont(name: "Futura", size: 0.35)
+        text.alignmentMode = kCAAlignmentCenter
+        text.truncationMode = kCATruncationMiddle
+        text.firstMaterial?.diffuse.contents = UIColor.white
+        return text
+    }
+    
     private func createTextString() -> String {
-        let returnString = self.title + " - Distance: " + self.distance + " km"
+        let returnString = "\(self.title) - Distance: \(self.distance) +  km - URL:  + \(self.url)"
         return returnString
     }
 }

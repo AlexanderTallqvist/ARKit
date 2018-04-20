@@ -78,17 +78,20 @@ class LocationViewController2: UIViewController, CLLocationManagerDelegate {
             }
             
             for item in response.mapItems {
-                let url = item.url?.absoluteString
+                var url = ""
+                if((item.url) != nil) {
+                    url = (item.url?.absoluteString)!
+                }
                 let placeLocation = (item.placemark.location)!
                 let distance = placeLocation.distance(from: userLocation) / 1000
                 let distanceString = String(format: "%.3f", distance)
                 let name = (item.placemark.name)!
                 
                 // Use our custom annotation node
-                let locationAnnotationNode = LocationAnnotation(location: placeLocation, title: name, distance: distanceString)
+                let locationAnnotationNode = LocationAnnotation(location: placeLocation, title: name, distance: distanceString, url: url)
                 
                 // LocationAnnotationNode from ARCL
-                let annotationNode = LocationAnnotationNode(location: placeLocation, image: #imageLiteral(resourceName: "Back"))
+                //let annotationNode = LocationAnnotationNode(location: placeLocation, image: #imageLiteral(resourceName: "Back"))
                 //annotationNode.scaleRelativeToDistance = true
                 
                 // Add our anotation

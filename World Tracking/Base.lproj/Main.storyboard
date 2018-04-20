@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="a2Q-HO-i6e">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="a2Q-HO-i6e">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqw-zZ-bXt">
@@ -90,18 +90,18 @@
                                     <constraint firstAttribute="width" constant="100" id="3fB-3u-m1Q"/>
                                     <constraint firstAttribute="height" constant="100" id="GXO-jo-CV4"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="Bottle"/>
+                                <state key="normal" backgroundImage="Map"/>
                                 <connections>
                                     <segue destination="rYK-nW-FK2" kind="presentation" modalTransitionStyle="coverVertical" id="8c7-J0-DlS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7p-QX-Eqc">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7p-QX-Eqc">
                                 <rect key="frame" x="217" y="736" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Hj8-86-jEn"/>
                                     <constraint firstAttribute="width" constant="100" id="jDm-uM-loK"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" backgroundImage="ImageRec"/>
                                 <connections>
                                     <segue destination="13O-QJ-kbR" kind="presentation" modalTransitionStyle="coverVertical" id="0ac-pB-Za8"/>
                                 </connections>
@@ -299,6 +299,17 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fn-rP-W0N">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                             </arscnView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxB-GT-Ouw">
+                                <rect key="frame" x="744" y="35" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="amp-9c-gbE"/>
+                                    <constraint firstAttribute="height" constant="75" id="vvK-k0-5Qn"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Back"/>
+                                <connections>
+                                    <segue destination="3cs-F9-m8O" kind="presentation" modalTransitionStyle="crossDissolve" id="kQW-K6-M7n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -306,6 +317,8 @@
                             <constraint firstItem="6Fn-rP-W0N" firstAttribute="leading" secondItem="5Zi-No-bHS" secondAttribute="leading" id="1g1-A8-bvK"/>
                             <constraint firstItem="6Fn-rP-W0N" firstAttribute="trailing" secondItem="5Zi-No-bHS" secondAttribute="trailing" id="65n-qe-5vT"/>
                             <constraint firstItem="6Fn-rP-W0N" firstAttribute="bottom" secondItem="5Zi-No-bHS" secondAttribute="bottom" id="Fgn-yi-RDN"/>
+                            <constraint firstItem="5Zi-No-bHS" firstAttribute="trailing" secondItem="gxB-GT-Ouw" secondAttribute="trailing" constant="15" id="ThD-F6-lvc"/>
+                            <constraint firstItem="gxB-GT-Ouw" firstAttribute="top" secondItem="5Zi-No-bHS" secondAttribute="top" constant="15" id="bKU-xA-eel"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Zi-No-bHS"/>
                     </view>
@@ -787,17 +800,19 @@
     </scenes>
     <resources>
         <image name="Back" width="256" height="256"/>
-        <image name="Background" width="719" height="1291"/>
+        <image name="Background2" width="900" height="1600"/>
         <image name="Bottle" width="256" height="256"/>
         <image name="Brush" width="256" height="256"/>
         <image name="Furniture" width="256" height="256"/>
+        <image name="ImageRec" width="128" height="128"/>
         <image name="Logo" width="2248" height="1865"/>
+        <image name="Map" width="256" height="256"/>
         <image name="Planet" width="256" height="256"/>
         <image name="Play" width="128" height="128"/>
         <image name="Restart" width="128" height="128"/>
         <image name="Ruler" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YlF-ip-ODf"/>
+        <segue reference="SCC-pJ-NpZ"/>
     </inferredMetricsTieBreakers>
 </document>
