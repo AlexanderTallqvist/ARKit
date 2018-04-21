@@ -9,17 +9,23 @@
   <li><b>Code:</b> /World Tracking/ViewController.swift</li>
 </ul>
 
+<img src="https://raw.githubusercontent.com/AlexanderTallqvist/ARKit/master/ARKit%20gifs/Measure.gif" width="300" height="400" />
+
 <h3>AR Painting</h3>
 <ul>
   <li>Allows users to paint in AR.</li>
   <li><b>Code:</b> /World Tracking/DrawingViewController.swift</li>
 </ul>
 
+<img src="https://raw.githubusercontent.com/AlexanderTallqvist/ARKit/master/ARKit%20gifs/Paint.gif" width="300" height="400" />
+
 <h3>AR Solar System</h3>
 <ul>
   <li>Allows users to visit parts of our solar system in AR.</li>
   <li><b>Code:</b> /World Tracking/PlanetViewController.swift</li>
 </ul>
+
+<img src="https://raw.githubusercontent.com/AlexanderTallqvist/ARKit/master/ARKit%20gifs/Planets.gif" width="300" height="400" />
 
 <h3>AR Ikea</h3>
 <ul>
@@ -28,11 +34,15 @@
   <li><b>Code:</b> /World Tracking/ikeaItemCell.swift</li>
 </ul>
 
+<img src="https://raw.githubusercontent.com/AlexanderTallqvist/ARKit/master/ARKit%20gifs/Ikea.gif" width="300" height="400" />
+
 <h3>AR Whack a Mole</h3>
 <ul>
   <li>Allows users to play a game of whack a mole in AR.</li>
   <li><b>Code:</b> /World Tracking/GameViewController.swift</li>
 </ul>
+
+<img src="https://raw.githubusercontent.com/AlexanderTallqvist/ARKit/master/ARKit%20gifs/Game.gif" width="300" height="400" />
 
 <h3>AR Near Me</h3>
 <ul>
@@ -49,5 +59,7 @@
   <li>Allows users to detect images in AR, and get various information back.</li>
   <li><b>Code:</b> /World Tracking/ImageDetectionViewController.swift</li>
 </ul>
+
+<img src="https://raw.githubusercontent.com/AlexanderTallqvist/ARKit/master/ARKit%20gifs/ImageDetection.gif" width="300" height="400" />
 
 
