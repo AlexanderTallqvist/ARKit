@@ -42,6 +42,8 @@
   <li><b>Code:</b> /World Tracking/LocationAnnotation.swift</li>
 </ul>
 
+<img src="https://raw.githubusercontent.com/AlexanderTallqvist/ARKit/master/ARKit%20gifs/Location.gif" width="300" height="400" />
+
 <h3>AR Image Recognition</h3>
 <ul>
   <li>Allows users to detect images in AR, and get various information back.</li>
