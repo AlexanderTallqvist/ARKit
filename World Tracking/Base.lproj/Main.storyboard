@@ -296,8 +296,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fn-rP-W0N">
-                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Fn-rP-W0N">
+                                <rect key="frame" x="0.0" y="20" width="834" height="1112"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxB-GT-Ouw">
                                 <rect key="frame" x="744" y="35" width="75" height="75"/>
@@ -310,6 +310,25 @@
                                     <segue destination="3cs-F9-m8O" kind="presentation" modalTransitionStyle="crossDissolve" id="kQW-K6-M7n"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3f-KW-7IQ">
+                                <rect key="frame" x="0.0" y="812" width="834" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Urj-Sg-dUa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Detected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTF-8P-laA">
+                                <rect key="frame" x="292" y="35" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="YSw-5C-UtG"/>
+                                    <constraint firstAttribute="height" constant="30" id="zzb-mn-k88"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -317,12 +336,19 @@
                             <constraint firstItem="6Fn-rP-W0N" firstAttribute="leading" secondItem="5Zi-No-bHS" secondAttribute="leading" id="1g1-A8-bvK"/>
                             <constraint firstItem="6Fn-rP-W0N" firstAttribute="trailing" secondItem="5Zi-No-bHS" secondAttribute="trailing" id="65n-qe-5vT"/>
                             <constraint firstItem="6Fn-rP-W0N" firstAttribute="bottom" secondItem="5Zi-No-bHS" secondAttribute="bottom" id="Fgn-yi-RDN"/>
+                            <constraint firstItem="OTF-8P-laA" firstAttribute="top" secondItem="5Zi-No-bHS" secondAttribute="top" constant="15" id="RXf-PY-LCy"/>
+                            <constraint firstItem="OTF-8P-laA" firstAttribute="centerX" secondItem="ddf-mx-Q2g" secondAttribute="centerX" id="SWv-eX-llA"/>
                             <constraint firstItem="5Zi-No-bHS" firstAttribute="trailing" secondItem="gxB-GT-Ouw" secondAttribute="trailing" constant="15" id="ThD-F6-lvc"/>
+                            <constraint firstItem="V3f-KW-7IQ" firstAttribute="bottom" secondItem="5Zi-No-bHS" secondAttribute="bottom" id="YZU-r8-KZs"/>
+                            <constraint firstItem="V3f-KW-7IQ" firstAttribute="trailing" secondItem="5Zi-No-bHS" secondAttribute="trailing" id="ZoU-Ce-bt9"/>
                             <constraint firstItem="gxB-GT-Ouw" firstAttribute="top" secondItem="5Zi-No-bHS" secondAttribute="top" constant="15" id="bKU-xA-eel"/>
+                            <constraint firstItem="V3f-KW-7IQ" firstAttribute="leading" secondItem="5Zi-No-bHS" secondAttribute="leading" id="wVw-YP-WaH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Zi-No-bHS"/>
                     </view>
                     <connections>
+                        <outlet property="DetectionLabel" destination="OTF-8P-laA" id="MdW-so-CU9"/>
+                        <outlet property="InfoArea" destination="V3f-KW-7IQ" id="RRS-7t-f2H"/>
                         <outlet property="imageDetectionSceneView" destination="6Fn-rP-W0N" id="pJs-Kj-IzH"/>
                     </connections>
                 </viewController>
@@ -813,6 +839,6 @@
         <image name="Ruler" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SCC-pJ-NpZ"/>
+        <segue reference="kQW-K6-M7n"/>
     </inferredMetricsTieBreakers>
 </document>

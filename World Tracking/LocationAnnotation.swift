@@ -33,25 +33,26 @@ class LocationAnnotation : LocationNode {
     }
     
     private func createUI() {
-        let plane = SCNPlane(width: 5, height: 3)
+        let plane = SCNPlane(width: 7, height: 6)
         plane.cornerRadius = 0.2
-        plane.firstMaterial?.diffuse.contents = UIColor.blue
+        plane.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "Bubble2")
         
         // Text nodes
         let textName = createTextNode(message: self.title)
-        let textDistance = createTextNode(message: self.distance + " km")
+        let distanceText = getDistance(distance: self.distance)
+        let textDistance = createTextNode(message: distanceText)
         let textUrl = createTextNode(message: self.url)
         
         let textNameNode = SCNNode(geometry: textName)
-        textNameNode.position = SCNVector3(0, 1, 0.2)
+        textNameNode.position = SCNVector3(0, 2, 0.2)
         centerText(node: textNameNode)
         
         let textDistanceNode = SCNNode(geometry: textDistance)
-        textDistanceNode.position = SCNVector3(0, 0, 0.2)
+        textDistanceNode.position = SCNVector3(0, 1, 0.2)
         centerText(node: textDistanceNode)
         
         let textUrlNode = SCNNode(geometry: textUrl)
-        textUrlNode.position = SCNVector3(0, -1, 0.2)
+        textUrlNode.position = SCNVector3(0, 0, 0.2)
         centerText(node: textUrlNode)
         
         let planeNode = SCNNode(geometry: plane)
@@ -87,12 +88,18 @@ class LocationAnnotation : LocationNode {
         text.font = UIFont(name: "Futura", size: 0.35)
         text.alignmentMode = kCAAlignmentCenter
         text.truncationMode = kCATruncationMiddle
-        text.firstMaterial?.diffuse.contents = UIColor.white
+        text.firstMaterial?.diffuse.contents = UIColor.black
         return text
     }
     
-    private func createTextString() -> String {
-        let returnString = "\(self.title) - Distance: \(self.distance) +  km - URL:  + \(self.url)"
-        return returnString
+    private func getDistance(distance: String) -> String {
+        var distanceDouble = Double(distance)!
+        if (distanceDouble < 1.0) {
+            distanceDouble = distanceDouble * 1000
+            return String(distanceDouble) + " m"
+        } else {
+            return distance + " km"
+        }
+        
     }
 }
